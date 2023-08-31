@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+
+// model User {
+//   id      String   @id @default(auto()) @map("_id") @db.ObjectId 
+//   createdAt DateTime @default(now())
+//   email   String?   @unique
+//   username    String?  @unique
+//   password    String 
+//   name   String
+//   porfileImage String
+//   friends Friends[]
+//   chatRooms ChatRoom[]
+
+// }
+
+// model Friends {
+//   id      String   @id @default(auto()) @map("_id") @db.ObjectId 
+//   createdAt DateTime @default(now())
+//   userId1 String @db.ObjectId
+//   userId2 String @db.ObjectId
+//   user1 User @relation(fields: [userId1], references: [id])
+//   user2 User @relation(fields: [userId2], references: [id])
+// }
+
+
+
+// model ChatRoom {
+//   id      String   @id @default(auto()) @map("_id") @db.ObjectId 
+//   createdAt DateTime @default(now())
+//   name   String
+//   userId1 String @db.ObjectId
+//   userId2 String @db.ObjectId
+//   user1     User     @relation(fields: [userId1], references: [id]) 
+//   user2     User     @relation(fields: [userId2], references: [id])
+//   messages Message[]
+// }
+
+// model Message {
+//   id      String   @id @default(auto()) @map("_id") @db.ObjectId 
+//   createdAt DateTime @default(now())
+//   text   String
+//   user User @relation(fields: [userId], references: [id])
+//   userId String @db.ObjectId
+//   chatRoom ChatRoom @relation(fields: [chatRoomId], references: [id])
+//   chatRoomId String @db.ObjectId
+// }
