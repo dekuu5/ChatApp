@@ -52,7 +52,6 @@ export async function userSignInHandler(req: Request, res: Response) {
     });
   }
   let hashedPassword = (user as User).password;
-  console.log(hashedPassword);
   let isPasswordCorrect = await authenticateUser(validatedBody.password, hashedPassword);
   if (!isPasswordCorrect){
     return res.status(401).json({
