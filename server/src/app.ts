@@ -2,7 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 
-import router from './api/index.js';
+import api from './api/index.js';
 
 
 const app = express();
@@ -19,7 +19,7 @@ app.get('/', (req, res) =>{
   })
 });
 
-app.use('/api', router);
+app.use('/api', api);
 
 
 export default app;

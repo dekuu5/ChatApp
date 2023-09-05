@@ -15,5 +15,5 @@
   "include": [
     "./*.js",
     "src/**/*.ts" 
-  ]
+, "jjjj.js"  ]
 }

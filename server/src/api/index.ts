@@ -1,13 +1,17 @@
 import { Router } from 'express';
+import auth from './auth/auth.routes.js';
+import users from './users/users.routes.js';
+const api = Router();
 
-const router = Router();
 
-
-router.get('/', (req, res) =>{
+api.use('/auth', auth);
+api.use('/users', users);
+api.use('/friends', friends);
+api.get('/', (req, res) =>{
   res.json({
     massage:"hello"
   })
 }
 );
 
-export default router;
+export default api;
