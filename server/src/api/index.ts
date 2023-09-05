@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import auth from './auth/auth.routes.js';
 import users from './users/users.routes.js';
+import friends from './friends/friends.routes.js';
 const api = Router();
 
 

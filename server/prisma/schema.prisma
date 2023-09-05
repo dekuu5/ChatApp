@@ -20,6 +20,8 @@ model User {
   password     String
   name         String
   profileImage String?
+  private     Boolean    @default(false)
+  admin       Boolean    @default(false)
 
   // ChatRoom relationships
   chatRooms1   ChatRoom[] @relation("User1ChatRooms")
@@ -71,6 +73,7 @@ model Friends {
   createdAt DateTime @default(now())
   userId1   Int
   userId2   Int
+  status    Boolean @default(false)
   
   // Relationships
   user1 User @relation("SentFriendRequests", fields: [userId1], references: [id])
